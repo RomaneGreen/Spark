@@ -3,7 +3,7 @@ import styles from '../styles'
 import RootNavigator from '../navigation/RootNavigator';
 import { connect } from 'react-redux';
 import { login } from '../redux/actions'
-import * as firebases from 'firebase';
+import * as firebase from 'firebase';
 import firebaseConfig from '../config/firebase.js'
 firebase.initializeApp(firebaseConfig);
 
@@ -50,7 +50,7 @@ class Login extends React.Component {
       return (
         <View style={styles.container}>
           <TouchableOpacity onPress={this.login.bind(this)}>
-            <Text>{this.props.loggedIn}</Text>
+            <Text>{this.props.loggedIn} vvvff</Text>
           </TouchableOpacity>
         </View>
       )      

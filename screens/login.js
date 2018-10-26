@@ -20,8 +20,8 @@ class Login extends React.Component {
   componentWillMount() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
-        this.props.dispatch(login(true))
-        console.log("We are authenticated now!" + JSON.stringify(user));
+        this.props.dispatch(login(user))
+        // console.log("We are authenticated now!" + JSON.stringify(user));
       }
     });
   }

@@ -10,6 +10,7 @@ firebase.initializeApp(firebaseConfig);
 import { 
   Text, 
   View,
+  Alert,
   TouchableOpacity
 } from 'react-native';
 
@@ -34,7 +35,7 @@ class Login extends React.Component {
       const credential = await firebase.auth.FacebookAuthProvider.credential(token);
 
       // Sign in with credential from the Facebook user.
-      firebase.auth().signInWithCredential(credential).catch((error) => {
+      firebase.auth().signInAndRetrieveDataWithCredential(credential).catch((error) => {
         // Handle Errors here.
         Alert.alert("Try Again")
       });
@@ -50,7 +51,7 @@ class Login extends React.Component {
       return (
         <View style={styles.container}>
           <TouchableOpacity onPress={this.login.bind(this)}>
-            <Text>{this.props.loggedIn} vvvff</Text>
+            <Text>{this.props.loggedIn} Login</Text>
           </TouchableOpacity>
         </View>
       )      

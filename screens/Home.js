@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles'
 import { connect } from 'react-redux';
-import { login } from '../redux/actions'
+// import { login } from '../redux/actions'
 
 import { 
   Text, 

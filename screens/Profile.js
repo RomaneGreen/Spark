@@ -32,7 +32,7 @@ class Profile extends React.Component {
             <Text style={[styles.center, styles.bold]} >{this.props.user.name}</Text>
           </View>
           <View style={styles.imgRow}>
-            {this.props.user.images.map((uri, key)=>{
+            {this.props.users.images.map((uri, key)=>{
               return (
                 <TouchableOpacity key={{key}} onPress={this.deleteImage.bind({self: this, key: key })} >
                   <Image style={styles.img} source={{uri: uri}} />

@@ -1,54 +1,33 @@
 import React from 'react';
 import styles from '../styles'
-import * as firebase from 'firebase';
 import { connect } from 'react-redux';
-import { getCards } from '../redux/actions'
-import SwipeCards from 'react-native-swipe-cards'
-import Cards from '../components/Cards.js'
-import NoCards from '../components/NoCards.js'
+// import { login } from '../redux/actions'
 
 import { 
   Text, 
   View,
-  Image
+  Alert
 } from 'react-native';
 
 class Home extends React.Component {
+  state = {}
 
-  componentWillMount(){
-    this.props.dispatch(getCards())
-  }
+  componentWillMount() {
 
-  handleYup (card) {
-    firebase.database().ref('cards/' + this.props.user.id + '/swipes').update({ [card.id]: true });
-  }
-
-  handleNope (card) {
-    firebase.database().ref('cards/' + this.props.user.id + '/swipes').update({ [card.id]: false });
-  }
+  } 
 
   render() {
     return (
-      <SwipeCards
-        cards={this.props.cards}
-        stack={false}
-        renderCard={(cardData) => <Cards {...cardData} />}
-        renderNoMoreCards={() => <NoCards />}
-        showYup={false}
-        showNope={false}
-        handleYup={this.handleYup.bind(this)}
-        handleNope={this.handleNope.bind(this)}
-        handleMaybe={this.handleMaybe}
-        hasMaybeAction={false}/>
+      <View>
+        <Text>Home</Text>
+      </View>
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    loggedIn: state.loggedIn,
-    cards: state.cards,
-    user: state.user
+    loggedIn: state.loggedIn
   };
 }
 

@@ -51,7 +51,7 @@ class Login extends React.Component {
       return (
         <View style={styles.container}>
           <TouchableOpacity onPress={this.login.bind(this)}>
-            <Text>{this.props.loggedIn} Login </Text>
+            <Text>{this.props.loggedIn} Login</Text>
           </TouchableOpacity>
         </View>
       )      

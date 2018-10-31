@@ -32,7 +32,7 @@ export default createMaterialTopTabNavigator(
     tabBarPosition: 'top',
     initialRouteName: 'Home',
     animationEnabled: true,
-    swipeEnabled: false,
+    swipeEnabled: true,
     tabBarOptions: {
       style: {
         height: 75
